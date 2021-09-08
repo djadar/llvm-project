@@ -375,11 +375,13 @@ namespace {
 					}
 				}
 				
-
+				errs()<<"/*************\n DELETE"<<"\n*****************/\n";
+				
 				for (auto CI :callinst)
 				{
 					// At some point write this to delete the old CI
 					CI->eraseFromParent();
+					errs()<<"Done\n";
 				}
 			
 			
