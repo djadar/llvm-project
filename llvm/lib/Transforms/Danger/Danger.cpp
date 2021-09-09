@@ -237,7 +237,8 @@ namespace {
 			args.push_back(intTy);
 			// Specify the return value, arguments, and if there are variable numbers of arguments.
 			FunctionType* funcTy = FunctionType::get(voidTy, args, false);
-			Function::Create(funcTy, llvm::GlobalValue::ExternalLinkage)->setName(SECURE_MALLOC);
+			//Function::Create(funcTy, llvm::GlobalValue::ExternalLinkage)->setName(SECURE_MALLOC);
+			Function::Create(funcTy, Function::ExternalLinkage, SECURE_MALLOC, M);
 			errs()<< "Also Function \n" << *funcTy <<"\n";
 		}
 
@@ -380,6 +381,8 @@ namespace {
 				for (auto CI :callinst)
 				{
 					// At some point write this to delete the old CI
+					//CI->removeFromParent();
+					//errs()<<"ok\n";
 					CI->eraseFromParent();
 					errs()<<"Done\n";
 				}
