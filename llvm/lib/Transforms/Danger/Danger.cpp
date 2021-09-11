@@ -383,7 +383,10 @@ namespace {
 					// At some point write this to delete the old CI
 					//CI->removeFromParent();
 					//errs()<<"ok\n";
-					CI->eraseFromParent();
+					if (CI->users().empty()){
+						errs()<< "callinst \n" << *CI <<"\n";
+						CI->eraseFromParent();
+					}
 					errs()<<"Done\n";
 				}
 			
