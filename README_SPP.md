@@ -13,6 +13,14 @@ cd build/
 
 cmake ../
 
+# To write a new pass
+ 
+Create the directory of the pass in llvm/lib/Transforms
+
+Add the directory to the CMakeList file in llvm/lib/transforms
+
+Write your pass in the created folder
+
 # To register or compile a pass
 
 cmake --build .
