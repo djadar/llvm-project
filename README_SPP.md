@@ -1,5 +1,5 @@
 # llvm
-llvm pass to obtain vulnerable buffer list and replace unsafe buffer by replacing malloc by new secure_malloc function
+llvm pass to obtain vulnerable buffer list and protect unsafe buffer by replacing malloc by new secure_malloc function
 
 ## To obtain officiel llvm source code that we used
 
